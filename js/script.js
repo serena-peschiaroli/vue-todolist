@@ -17,6 +17,10 @@ createApp ({
                 this.tasks.push(this.newTask.trim());
                 this.newTask = "";
             }
+        },
+        // per rimuovere item
+        removeTask (index){
+            this.tasks.splice(index, 1);
         }
     }
 }).mount('#app');

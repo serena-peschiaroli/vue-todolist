@@ -30,7 +30,7 @@
                         v-for="(task, index) in tasks" :key="index">
                             <span>{{task}} </span>
                             <!-- aggiungo bottone per rimozione -->
-                            <button class="btn btn-outline-secondary justify-content-end" type="button" id="removeTask">&#x274C;</button>
+                            <button @click="removeTask(index)" class="btn btn-outline-secondary justify-content-end" type="button" id="removeTask{{index}}">&#x274C;</button>
                       </div>
 
                         </li>
