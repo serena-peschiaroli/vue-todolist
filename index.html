@@ -18,24 +18,31 @@
                 <div class="col-8">
                     <!-- input per nuovo task -->
                     <div class="input-group mb-5">
-                        <!-- aggiungo v-model per input -->
+                        <!-- Aggiunta del v-model per la gestione dell'input -->
                         <input v-model="newTask" type="text" class="form-control newTask" placeholder="Nuovo ToDo" aria-label="Nuovo da fare" aria-describedby="button-addon2">
+                        <!-- Bottone per aggiungere un nuovo task -->
                         <button @click="addTask" class="btn btn-outline-secondary" type="button" id="submitNewTask">Invia</button>
-                      </div>
-                      <!-- lista per stampare task -->
+                    </div>
+                      <!-- lista per visualizzare i task -->
 
                       <ul class="list-group">
-                        <!-- v-for per scorrere items dentro array -->
+                        <!-- Utilizzo di v-for per iterare sugli elementi dell'array "tasks" -->
                         <li class="list-group-item d-flex justify-content-between" 
                         v-for="(task, index) in tasks" :key="index">
-                            <span>{{task}} </span>
-                            <!-- aggiungo bottone per rimozione -->
-                            <button @click="removeTask(index)" class="btn btn-outline-secondary justify-content-end" type="button" id="removeTask{{index}}">&#x274C;</button>
-                      </div>
+                        <!-- Utilizzo di :class per condizionare la classe "completed" in base a "done"; aggiunta chiamata della funzione taskDone allo span con task.text -->
+                            <span @click="taskDone(index)" :class="{ 'completed' : task.done}">{{task.text }} </span>
+                            <div>
+                                  <!-- Bottone per contrassegnare il task come completato -->
+                                <button @click="taskDone(index)" class="btn btn-outline-secondary justify-content-end" type="button" id="taskDone{{index}}">&#x2705;</button>
+                                <!--  bottone per rimozione -->
+                                <button @click="removeTask(index)" class="btn btn-outline-secondary justify-content-end" type="button" id="removeTask{{index}}">&#x274C;</button>  
+                            </div>
+                            
+                    
 
                         </li>
                         
-                      </ul>
+                    </ul>
 
 
                 </div>
@@ -46,3 +53,5 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
