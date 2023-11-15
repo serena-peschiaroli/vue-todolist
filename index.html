@@ -21,7 +21,9 @@
 
                       <ul class="list-group">
                         
-                        <li class="list-group-item">A  item</li>
+                        <li class="list-group-item" v-for="(task, index) in tasks" :key="index">
+                            <span>{{task}} </span>
+                        </li>
                         
                       </ul>
 
