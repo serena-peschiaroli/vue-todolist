@@ -10,14 +10,21 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
+        <div class="container p-3">
             <div class="row justify-content-center">
-                <h1> ToDo List</h1>
+                <h1 class="text-center m-5"> ToDo List</h1>
                 <div class="col-8">
-                    <div class="mb-3">
-                        <label for="newTask" class="form-label">Inserisci un nuovo ToDo</label>
-                        <input type="text" class="form-control" id="newTask" placeholder="Da fare">
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control newTask" placeholder="Nuovo ToDo" aria-label="Nuovo da fare" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="submitNewTask">Invia</button>
                       </div>
+
+                      <ul class="list-group">
+                        
+                        <li class="list-group-item">A  item</li>
+                        
+                      </ul>
+
 
                 </div>
             </div>
