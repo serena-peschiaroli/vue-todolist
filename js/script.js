@@ -1,5 +1,8 @@
 const { createApp } = Vue;
 
+const dt = luxon.DateTime;
+console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_FULL_WJOTH_SECONDS));
+
 createApp({
     data() {
         return {
