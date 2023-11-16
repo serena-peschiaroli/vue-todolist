@@ -24,8 +24,8 @@
                         <button @click="addTask" class="btn btn-outline-secondary" type="button" id="submitNewTask">Invia</button>
                     </div>
                       <!-- lista per visualizzare i task -->
-
-                      <ul class="list-group">
+                    <!--aggiunto v-if per mostrare un alert se la lista è vuota-->
+                      <ul class="list-group" v-if="tasks.length > 0" >
                         <!-- Utilizzo di v-for per iterare sugli elementi dell'array "tasks" -->
                         <li class="list-group-item d-flex justify-content-between" 
                         v-for="(task, index) in tasks" :key="index">
@@ -43,6 +43,9 @@
                         </li>
                         
                     </ul>
+                    <div class="alert alert-success " v-else>
+                        Nessun elemento nella lista dei toDO!
+                    </div>
 
 
                 </div>
