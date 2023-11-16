@@ -19,7 +19,7 @@
                     <!-- input per nuovo task -->
                     <div class="input-group mb-5">
                         <!-- Aggiunta del v-model per la gestione dell'input -->
-                        <input v-model="newTask" type="text" class="form-control newTask" placeholder="Nuovo ToDo" aria-label="Nuovo da fare" aria-describedby="button-addon2">
+                        <input  @keyup.enter="addTask" v-model="newTask" type="text" class="form-control newTask" placeholder="Nuovo ToDo" aria-label="Nuovo da fare" aria-describedby="button-addon2">
                         <!-- Bottone per aggiungere un nuovo task -->
                         <button @click="addTask" class="btn btn-outline-secondary" type="button" id="submitNewTask">Invia</button>
                     </div>

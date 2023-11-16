@@ -18,13 +18,18 @@ createApp({
         // per aggiungere nuovo todo
         addTask() {
             // Controlla se il nuovo item != spazio vuoto
-            if (this.newTask.trim() !== "") {
+            const trimmedTask = this.newTask.trim();
+
+            if (trimmedTask !== "") {
                 // Aggiunge il nuovo task all'array
-                this.tasks.push({ text: this.newTask.trim(), done: false });
+                this.tasks.unshift({ text: trimmedTask, done: false });
                 // Resetta il campo di input
                 this.newTask = "";
                 // Log per indicare l'aggiunta del nuovo task
                 console.log("Nuovo item aggiunto:", this.tasks);
+            }else{
+                //mostra un avviso se todo vuoto
+                alert("inserisci un todo valido!")
             }
         },
         // per rimuovere item
